@@ -42,9 +42,9 @@ fun ImageSlider() {
     var currentImageIndex by remember { mutableStateOf(0) }
 
     val imagesWithText = listOf(
-        Pair(R.drawable.test, "hhhfhdjdjdhjsjjdjdjjdjd"),
-        Pair(R.drawable.test, "dghdhgjdhsdksjdhljshjkghs"),
-        Pair(R.drawable.test, "alffs.kgjslkddf;skfldsgk;sldkgl")
+        Pair(R.drawable.test, "Природа справжнє диво"),
+        Pair(R.drawable.car, "Нова модель гоночної машини"),
+        Pair(R.drawable.study, "Ніколи не пізно навчатись")
     )
 
     Column(
@@ -63,18 +63,19 @@ fun ImageSlider() {
         )
 
         Button(
+            onClick = { currentImageIndex = (currentImageIndex + 1) % imagesWithText.size },
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text("Наступне зображення")
+        }
+
+        Button(
             onClick = { currentImageIndex = (currentImageIndex - 1 + imagesWithText.size) % imagesWithText.size },
             modifier = Modifier.padding(8.dp)
         ) {
             Text("Попереднє зображення")
         }
 
-        Button(
-            onClick = { currentImageIndex = (currentImageIndex + 1) % imagesWithText.size },
-            modifier = Modifier.padding(8.dp)
-        ) {
-            Text("Наступне зображення")
-        }
     }
 }
 
