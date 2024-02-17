@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -40,9 +42,9 @@ fun ImageSlider() {
     var currentImageIndex by remember { mutableStateOf(0) }
 
     val imagesWithText = listOf(
-        Pair(R.drawable.test, "Текст для зображення 1"),
-        Pair(R.drawable.test, "Текст для зображення 2"),
-        Pair(R.drawable.test, "Текст для зображення 3")
+        Pair(R.drawable.test, "hhhfhdjdjdhjsjjdjdjjdjd"),
+        Pair(R.drawable.test, "dghdhgjdhsdksjdhljshjkghs"),
+        Pair(R.drawable.test, "alffs.kgjslkddf;skfldsgk;sldkgl")
     )
 
     Column(
@@ -52,7 +54,7 @@ fun ImageSlider() {
         Image(
             painter = painterResource(id = imagesWithText[currentImageIndex].first),
             contentDescription = null,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp).fillMaxWidth().height(300.dp)
         )
 
         Text(
