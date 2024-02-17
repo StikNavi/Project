@@ -79,7 +79,6 @@ fun ImageSlider() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun ImageSliderPreview() {
